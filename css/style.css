@@ -1,0 +1,24 @@
+.control-panel {
+	text-align: center;
+}
+
+.btn {
+	font-family: "Roboto Mono", monospace;
+	margin-left: 4px;
+	margin-right: 4px;
+	text-transform: uppercase;
+	border: 0;
+    border:2px solid #2196f3;
+	background-color: #2196f3;
+	color: #ffffff;
+	padding: 10px 20px;
+	cursor: pointer;
+	font-size: 24px;
+	border-radius: 3px;
+}
+
+.btn:disabled {
+	background-color: #efefef;
+	color: #888888;
+    border:2px solid #888888;
+}
