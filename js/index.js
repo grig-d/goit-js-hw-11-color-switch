@@ -1,29 +1,25 @@
 // button.disabled = true
 // button.disabled = false
+import colors from './colors.js';
 
-const colors = [
-  '#FFFFFF',
-  '#2196F3',
-  '#4CAF50',
-  '#FF9800',
-  '#009688',
-  '#795548',
-];
+const refs = {
+  startBtn: document.querySelector('button[data-action="start"]'),
+  stopBtn: document.querySelector('button[data-action="stop"]'),
+  body: document.getElementsByTagName('body')[0],
+};
 
 const randomIntegerFromInterval = (min, max) => {
   return Math.floor(Math.random() * (max - min + 1) + min);
 };
 
-const refs = {
-  startBtn: document.querySelector('button[data-action="start"]'),
-  body: document.getElementsByTagName('body')[0],
-};
+refs.startBtn.addEventListener('click', colorSwitchStart);
 
-refs.startBtn.addEventListener('click', () => {
-	console.log(randomIntegerFromInterval(0, 5));
-	console.log(refs.body);
-  refs.body.style.backgroundColor = '#2196F3';
-});
+function colorSwitchStart() {
+  setInterval(() => {
+    refs.body.style.backgroundColor =
+      colors[randomIntegerFromInterval(0, colors.length - 1)];
+  }, 500);
+}
 
 ////////
 // Есть массив цветов в hex-формате и кнопки Start и Stop
