@@ -1,5 +1,3 @@
-// button.disabled = true
-// button.disabled = false
 import colors from './colors.js';
 
 const refs = {
@@ -13,12 +11,21 @@ const randomIntegerFromInterval = (min, max) => {
 };
 
 refs.startBtn.addEventListener('click', colorSwitchStart);
+refs.stopBtn.addEventListener('click', colorSwitchStop);
+
+let intervalColorId;
 
 function colorSwitchStart() {
-  setInterval(() => {
+	refs.startBtn.disabled = true;
+  intervalColorId = setInterval(() => {
     refs.body.style.backgroundColor =
       colors[randomIntegerFromInterval(0, colors.length - 1)];
-  }, 500);
+  }, 1000);
+}
+
+function colorSwitchStop() {
+	refs.startBtn.disabled = false;
+    clearInterval(intervalColorId);
 }
 
 ////////
