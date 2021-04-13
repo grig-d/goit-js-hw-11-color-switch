@@ -3,7 +3,7 @@ import colors from './colors.js';
 const refs = {
   startBtn: document.querySelector('button[data-action="start"]'),
   stopBtn: document.querySelector('button[data-action="stop"]'),
-  body: document.getElementById('body'),
+  body: document.querySelector('body'),
 };
 
 const randomIntegerFromInterval = (min, max) => {
